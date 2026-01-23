@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Unslop Search</ShortName>
+  <Description>Search without AI overviews - routes to your preferred search engine with AI filters applied</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="16" height="16" type="image/png">https://unslopsearch.com/icon-16.png</Image>
+  <Image width="32" height="32" type="image/png">https://unslopsearch.com/icon-32.png</Image>
+  <Url type="text/html" template="https://unslopsearch.com/search?q={searchTerms}"/>
+  <Url type="application/x-suggestions+json" template="https://www.google.com/complete/search?client=firefox&amp;q={searchTerms}"/>
+</OpenSearchDescription>

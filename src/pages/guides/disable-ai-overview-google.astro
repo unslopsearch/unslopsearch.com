@@ -1,0 +1,657 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+		<!-- Primary Meta Tags -->
+		<title>How to Disable AI Overview on Google - Turn Off AI in Search Results</title>
+		<meta name="title" content="How to Disable AI Overview on Google - Turn Off AI in Search Results" />
+		<meta name="description" content="Learn 4 methods to turn off Google AI Overview: use udm=14, add -ai to searches, use Unslop Search, or install a browser extension. Step-by-step guide." />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://unslopsearch.com/guides/disable-ai-overview-google" />
+		<meta property="og:title" content="How to Disable AI Overview on Google - Turn Off AI in Search Results" />
+		<meta property="og:description" content="Learn 4 methods to turn off Google AI Overview: use udm=14, add -ai to searches, use Unslop Search, or install a browser extension." />
+		<link rel="canonical" href="https://unslopsearch.com/guides/disable-ai-overview-google/" />
+
+		<!-- Schema.org FAQ -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "How do I turn off AI Overview on Google?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "You can disable Google AI Overview by adding &udm=14 to your search URL, adding -ai to the end of your search query, using a tool like Unslop Search, or installing a browser extension that filters AI results."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "What is udm=14?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "udm=14 is a URL parameter that forces Google to show the 'Web' tab results only, removing AI Overviews, videos, and knowledge panels. It returns classic '10 blue links' style results."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Can I permanently disable Google AI Overview?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Yes, by setting Unslop Search as your default search engine or installing our browser extension, you can automatically get AI-free results on every search without manual steps."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "How do I disable AI mode in Chrome?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "To disable AI in Chrome: Install the Unslop Search extension, set a custom search engine with udm=14 parameter at chrome://settings/searchEngines, or use unslopsearch.com as your default search. If AI still appears, clear your cache and check you haven't opted into Google Labs features."
+					}
+				}
+			]
+		}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="breadcrumb">
+				<a href="/">Home</a>
+				<span>/</span>
+				<a href="/guides">Guides</a>
+				<span>/</span>
+				<span>Disable AI Overview</span>
+			</nav>
+
+			<h1>How to Disable AI Overview on Google</h1>
+			<p class="intro">Four methods to remove AI-generated summaries from your search results.</p>
+
+			<nav class="toc">
+				<h2>Contents</h2>
+				<ol>
+					<li><a href="#why">Why Disable AI Overview?</a></li>
+					<li><a href="#method-1">Method 1: Use Unslop Search (Easiest)</a></li>
+					<li><a href="#method-2">Method 2: Add udm=14 to URL</a></li>
+					<li><a href="#method-3">Method 3: Add -ai to Your Query</a></li>
+					<li><a href="#method-4">Method 4: Browser Extension</a></li>
+					<li><a href="#chrome">Disable AI in Chrome</a></li>
+					<li><a href="#set-as-default">Set as Default Search Engine</a></li>
+					<li><a href="#faq">FAQ</a></li>
+				</ol>
+			</nav>
+
+			<section id="why">
+				<h2>Why Disable AI Overview?</h2>
+				<p>Google's AI Overview (previously called SGE - Search Generative Experience) shows AI-generated summaries at the top of search results. While sometimes useful, many users prefer traditional results because:</p>
+				<ul>
+					<li><strong>Accuracy concerns</strong> - AI summaries can contain errors or hallucinations</li>
+					<li><strong>Slower loading</strong> - AI results take time to generate</li>
+					<li><strong>Prefer original sources</strong> - You want to read the actual websites, not summaries</li>
+					<li><strong>Privacy</strong> - Less data processing of your queries</li>
+					<li><strong>Cleaner interface</strong> - Classic "10 blue links" is simpler to scan</li>
+				</ul>
+			</section>
+
+			<section id="method-1">
+				<h2>Method 1: Use Unslop Search (Easiest)</h2>
+				<p>The simplest solution - just search on our site and we handle everything automatically.</p>
+
+				<div class="method-box recommended">
+					<span class="method-tag">Recommended</span>
+					<h3>How it works</h3>
+					<ol>
+						<li>Go to <a href="/">unslopsearch.com</a></li>
+						<li>Type your search query</li>
+						<li>Get Google results without AI</li>
+					</ol>
+					<p>We automatically add the <code>udm=14</code> parameter (or <code>-ai</code> suffix, your choice) to every search.</p>
+					<a href="/" class="cta-button">Try Unslop Search</a>
+				</div>
+
+				<p>Bonus: You can switch between Google, DuckDuckGo, Brave, and other search engines - all with AI filtering applied.</p>
+			</section>
+
+			<section id="method-2">
+				<h2>Method 2: Add udm=14 to URL</h2>
+				<p>For manual control, add <code>&udm=14</code> to any Google search URL.</p>
+
+				<div class="method-box">
+					<h3>Example</h3>
+					<p>Normal Google search:</p>
+					<code class="code-block">https://www.google.com/search?q=best+coffee+shops</code>
+					<p>With AI disabled:</p>
+					<code class="code-block">https://www.google.com/search?q=best+coffee+shops<strong>&udm=14</strong></code>
+				</div>
+
+				<p>The <code>udm=14</code> parameter forces Google's "Web" tab, which excludes AI Overviews, videos, and knowledge panels. <a href="/guides/what-is-udm14">Learn more about udm=14</a>.</p>
+
+				<h3>Create a Bookmark</h3>
+				<p>Add this as a bookmark and use it to search:</p>
+				<code class="code-block">https://www.google.com/search?q=%s&udm=14</code>
+				<p>Replace <code>%s</code> with your search term, or set it up as a custom search engine in your browser.</p>
+			</section>
+
+			<section id="method-3">
+				<h2>Method 3: Add -ai to Your Query</h2>
+				<p>A simple trick: append <code>-ai</code> to the end of your search query.</p>
+
+				<div class="method-box">
+					<h3>Example</h3>
+					<p>Instead of searching:</p>
+					<code class="code-block">best coffee shops</code>
+					<p>Search:</p>
+					<code class="code-block">best coffee shops -ai</code>
+				</div>
+
+				<p>The <code>-ai</code> is a search operator that excludes pages containing "ai" which often triggers Google to skip the AI Overview. However, this method is less reliable than <code>udm=14</code> and may filter out some legitimate results that mention AI.</p>
+
+				<p class="warning">
+					<strong>Note:</strong> This method may stop working as Google changes their algorithms. Use <code>udm=14</code> for more reliable results.
+				</p>
+			</section>
+
+			<section id="method-4">
+				<h2>Method 4: Browser Extension</h2>
+				<p>Install our browser extension to automatically filter AI from every search across multiple search engines.</p>
+
+				<div class="method-box">
+					<h3>Features</h3>
+					<ul>
+						<li>Works on Google, DuckDuckGo, and Brave Search</li>
+						<li>Automatically applies AI-disabling parameters</li>
+						<li>Choose your preferred method (udm=14 or -ai)</li>
+						<li>No data collection - completely private</li>
+					</ul>
+					<a href="/guides/browser-extension" class="cta-button secondary">Get the Extension</a>
+				</div>
+
+				<p>Other extensions that work:</p>
+				<ul>
+					<li><strong>Bye Bye Google AI</strong> (Chrome)</li>
+					<li><strong>Hide Google AI Overviews</strong> (Chrome)</li>
+					<li><strong>uBlock Origin</strong> with custom filters</li>
+				</ul>
+			</section>
+
+			<section id="chrome">
+				<h2>How to Disable AI in Chrome</h2>
+				<p>Chrome users searching for how to disable AI mode have several options. Here's how to turn off AI in Google Chrome specifically.</p>
+
+				<div class="browser-section">
+					<h3>Method 1: Install Unslop Search Extension (Easiest)</h3>
+					<p>Our Chrome extension automatically disables AI on every Google search:</p>
+					<ol>
+						<li>Visit the <a href="/guides/browser-extension">Chrome extension page</a></li>
+						<li>Click "Add to Chrome"</li>
+						<li>Search normally - AI is filtered automatically</li>
+					</ol>
+					<p>The extension works on Google, DuckDuckGo, and Brave Search.</p>
+				</div>
+
+				<div class="browser-section">
+					<h3>Method 2: Set Custom Search Engine in Chrome</h3>
+					<p>Add Unslop Search or AI-free Google as a custom search engine:</p>
+					<ol>
+						<li>Go to <code>chrome://settings/searchEngines</code></li>
+						<li>Click <strong>Add</strong> under "Site search"</li>
+						<li>Fill in the details:
+							<ul>
+								<li><strong>Name:</strong> Unslop Search (or "Google No AI")</li>
+								<li><strong>Shortcut:</strong> @unslop</li>
+								<li><strong>URL:</strong> <code>https://unslopsearch.com/search?q=%s</code></li>
+							</ul>
+						</li>
+						<li>Click the three dots next to your new entry</li>
+						<li>Select <strong>Make default</strong></li>
+					</ol>
+					<p>Now all your address bar searches will be AI-free.</p>
+				</div>
+
+				<div class="browser-section">
+					<h3>Method 3: Use udm=14 Parameter Directly</h3>
+					<p>For manual control, add <code>&udm=14</code> to any Google search URL in Chrome. You can also create a custom search engine with this URL:</p>
+					<code class="code-block">https://www.google.com/search?q=%s&udm=14</code>
+				</div>
+
+				<div class="browser-section">
+					<h3>Troubleshooting Chrome AI Mode</h3>
+					<p>If AI results still appear after trying these methods:</p>
+					<ul>
+						<li><strong>Clear your cache:</strong> Go to Settings &rarr; Privacy and security &rarr; Clear browsing data</li>
+						<li><strong>Check Google Labs:</strong> Make sure you haven't opted into AI features at <a href="https://labs.google.com" target="_blank" rel="noopener">labs.google.com</a></li>
+						<li><strong>Verify extension is enabled:</strong> Check <code>chrome://extensions</code> to ensure the Unslop extension is active</li>
+						<li><strong>Try incognito mode:</strong> Test if the issue persists in a private window</li>
+						<li><strong>Check for conflicts:</strong> Other extensions may interfere - try disabling them temporarily</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="set-as-default">
+				<h2>Set as Default Search Engine</h2>
+				<p>Make AI-free searching automatic by setting Unslop Search as your default.</p>
+
+				<div class="browser-guide">
+					<div class="browser-section">
+						<h3>Chrome</h3>
+						<ol>
+							<li>Visit <a href="/">unslopsearch.com</a> and perform a search</li>
+							<li>Go to <strong>Settings</strong> &rarr; <strong>Search engine</strong></li>
+							<li>Click <strong>Manage search engines and site search</strong></li>
+							<li>Find "Unslop Search" under <strong>Inactive shortcuts</strong></li>
+							<li>Click <strong>Activate</strong>, then click the three dots &rarr; <strong>Make default</strong></li>
+						</ol>
+					</div>
+
+					<div class="browser-section">
+						<h3>Firefox</h3>
+						<ol>
+							<li>Visit <a href="/">unslopsearch.com</a></li>
+							<li>Right-click the address bar</li>
+							<li>Select <strong>Add "Unslop Search"</strong></li>
+							<li>Go to <strong>Settings</strong> &rarr; <strong>Search</strong></li>
+							<li>Under "Default Search Engine", select "Unslop Search"</li>
+						</ol>
+					</div>
+
+					<div class="browser-section">
+						<h3>Edge</h3>
+						<ol>
+							<li>Visit <a href="/">unslopsearch.com</a> and perform a search</li>
+							<li>Go to <strong>Settings</strong> &rarr; <strong>Privacy, search, and services</strong></li>
+							<li>Scroll to <strong>Address bar and search</strong></li>
+							<li>Click <strong>Manage search engines</strong></li>
+							<li>Find "Unslop Search", click three dots &rarr; <strong>Make default</strong></li>
+						</ol>
+					</div>
+
+					<div class="browser-section">
+						<h3>Safari</h3>
+						<p>Safari doesn't support custom search engines natively. Use our <a href="/guides/browser-extension">browser extension</a> instead, or create a bookmark with the search URL.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="faq">
+				<h2>Frequently Asked Questions</h2>
+
+				<div class="faq-item">
+					<h3>How do I turn off AI Overview on Google?</h3>
+					<p>The most reliable method is adding <code>&udm=14</code> to your Google search URL. Alternatively, use <a href="/">Unslop Search</a> which does this automatically, or install a <a href="/guides/browser-extension">browser extension</a>.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>What is udm=14?</h3>
+					<p>It's a URL parameter that forces Google to show only "Web" tab results, removing AI Overviews, featured snippets, and other rich results. <a href="/guides/what-is-udm14">Learn more</a>.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>Can I permanently disable Google AI Overview?</h3>
+					<p>Google doesn't provide a setting to disable AI Overview in your account. However, by setting Unslop Search as your default search engine or using our extension, you get AI-free results automatically on every search.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>Does this work on mobile?</h3>
+					<p>Yes! You can use <a href="/">unslopsearch.com</a> on any mobile browser. On Android, you can also install it as a PWA (tap the menu and "Add to Home Screen"). Browser extensions work on some mobile browsers like Firefox for Android.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>Will Google block these methods?</h3>
+					<p>The <code>udm=14</code> parameter is an official Google feature for their "Web" tab filter, so it's unlikely to be removed. The <code>-ai</code> trick is less reliable and may stop working.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>What about other search engines?</h3>
+					<p>Unslop Search also supports <a href="/guides/search-engines-without-ai">DuckDuckGo, Brave, Startpage, Qwant, and Mojeek</a> - each with their own AI-disabling parameters applied.</p>
+				</div>
+			</section>
+
+			<div class="next-steps">
+				<h2>Next Steps</h2>
+				<div class="next-links">
+					<a href="/guides/set-default-search-engine">
+						<span>Setup</span>
+						<strong>Set Default Search Engine</strong>
+					</a>
+					<a href="/guides/duckduckgo-vs-google">
+						<span>Compare</span>
+						<strong>DuckDuckGo vs Google</strong>
+					</a>
+					<a href="/guides/best-private-search-engines">
+						<span>Explore</span>
+						<strong>Private Search Engines</strong>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		background: #1a1a2e;
+		min-height: 100vh;
+		margin: 0;
+		padding: 40px 20px;
+		color: #ccc;
+		line-height: 1.7;
+	}
+
+	.container {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.breadcrumb {
+		font-size: 0.85rem;
+		margin-bottom: 2rem;
+	}
+
+	.breadcrumb a {
+		color: #4285f4;
+		text-decoration: none;
+	}
+
+	.breadcrumb a:hover {
+		text-decoration: underline;
+	}
+
+	.breadcrumb span {
+		color: #555;
+		margin: 0 0.5rem;
+	}
+
+	h1 {
+		color: #fff;
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
+		font-weight: 400;
+		line-height: 1.3;
+	}
+
+	.intro {
+		color: #888;
+		font-size: 1.1rem;
+		margin-bottom: 2rem;
+	}
+
+	.toc {
+		background: rgba(255, 255, 255, 0.03);
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin-bottom: 3rem;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.toc h2 {
+		color: #888;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin: 0 0 1rem 0;
+	}
+
+	.toc ol {
+		margin: 0;
+		padding-left: 1.25rem;
+		color: #aaa;
+	}
+
+	.toc li {
+		margin-bottom: 0.4rem;
+	}
+
+	.toc a {
+		color: #4285f4;
+		text-decoration: none;
+	}
+
+	.toc a:hover {
+		text-decoration: underline;
+	}
+
+	section {
+		margin-bottom: 3rem;
+	}
+
+	h2 {
+		color: #fff;
+		font-size: 1.4rem;
+		margin-bottom: 1rem;
+		font-weight: 500;
+		padding-top: 1rem;
+	}
+
+	h3 {
+		color: #ddd;
+		font-size: 1.1rem;
+		margin: 1.5rem 0 0.75rem 0;
+		font-weight: 500;
+	}
+
+	p {
+		margin: 0 0 1rem 0;
+		color: #aaa;
+	}
+
+	ul, ol {
+		margin: 0 0 1rem 0;
+		padding-left: 1.5rem;
+		color: #aaa;
+	}
+
+	li {
+		margin-bottom: 0.5rem;
+	}
+
+	strong {
+		color: #ddd;
+	}
+
+	a {
+		color: #4285f4;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	code {
+		background: rgba(255, 255, 255, 0.1);
+		padding: 2px 6px;
+		border-radius: 4px;
+		color: #e0e0e0;
+		font-size: 0.9em;
+	}
+
+	.code-block {
+		display: block;
+		background: #0d0d1a;
+		padding: 1rem;
+		border-radius: 8px;
+		overflow-x: auto;
+		margin: 0.75rem 0 1rem 0;
+		font-size: 0.85rem;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.code-block strong {
+		color: #4285f4;
+	}
+
+	.method-box {
+		background: #252542;
+		border-radius: 12px;
+		padding: 1.5rem;
+		margin: 1.5rem 0;
+		position: relative;
+	}
+
+	.method-box.recommended {
+		border: 1px solid rgba(66, 133, 244, 0.3);
+	}
+
+	.method-box h3 {
+		margin-top: 0;
+	}
+
+	.method-tag {
+		position: absolute;
+		top: -10px;
+		right: 1rem;
+		background: #4285f4;
+		color: #fff;
+		font-size: 0.7rem;
+		padding: 4px 10px;
+		border-radius: 4px;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.cta-button {
+		display: inline-block;
+		background: #4285f4;
+		color: #fff;
+		padding: 12px 24px;
+		border-radius: 8px;
+		font-weight: 500;
+		text-decoration: none;
+		margin-top: 0.5rem;
+		transition: background 0.2s, transform 0.2s;
+	}
+
+	.cta-button:hover {
+		background: #3367d6;
+		transform: translateY(-1px);
+		text-decoration: none;
+	}
+
+	.cta-button.secondary {
+		background: transparent;
+		border: 1px solid #4285f4;
+		color: #4285f4;
+	}
+
+	.cta-button.secondary:hover {
+		background: rgba(66, 133, 244, 0.1);
+	}
+
+	.warning {
+		background: rgba(255, 193, 7, 0.1);
+		border-left: 3px solid #ffc107;
+		padding: 1rem;
+		border-radius: 0 8px 8px 0;
+		margin: 1rem 0;
+	}
+
+	.browser-guide {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.browser-section {
+		background: #252542;
+		border-radius: 12px;
+		padding: 1.5rem;
+	}
+
+	.browser-section h3 {
+		margin-top: 0;
+		color: #fff;
+	}
+
+	.browser-section ol {
+		margin-bottom: 0;
+	}
+
+	.faq-item {
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.faq-item:last-child {
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.faq-item h3 {
+		color: #fff;
+		margin-top: 0;
+	}
+
+	.faq-item p:last-child {
+		margin-bottom: 0;
+	}
+
+	.next-steps {
+		background: rgba(66, 133, 244, 0.05);
+		border-radius: 12px;
+		padding: 2rem;
+		margin-top: 3rem;
+		border: 1px solid rgba(66, 133, 244, 0.1);
+	}
+
+	.next-steps h2 {
+		margin-top: 0;
+		padding-top: 0;
+		font-size: 1.1rem;
+		color: #888;
+	}
+
+	.next-links {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		gap: 1rem;
+	}
+
+	.next-links a {
+		display: block;
+		padding: 1rem;
+		background: #252542;
+		border-radius: 8px;
+		text-decoration: none;
+		transition: background 0.2s, transform 0.2s;
+	}
+
+	.next-links a:hover {
+		background: #2a2a4a;
+		transform: translateY(-2px);
+		text-decoration: none;
+	}
+
+	.next-links span {
+		display: block;
+		font-size: 0.75rem;
+		color: #666;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-bottom: 0.25rem;
+	}
+
+	.next-links strong {
+		color: #4285f4;
+		font-weight: 500;
+	}
+</style>

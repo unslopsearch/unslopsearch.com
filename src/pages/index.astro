@@ -1,0 +1,935 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+		<!-- Primary Meta Tags -->
+		<title>Unslop Search - Search Without AI Overview</title>
+		<meta name="title" content="Unslop Search - Search Without AI Overview" />
+		<meta name="description" content="Search Google, DuckDuckGo, Brave, and more without AI overviews. Automatically filters out AI-generated results." />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://unslopsearch.com/" />
+		<meta property="og:title" content="Unslop Search - Search Without AI Overview" />
+		<meta property="og:description" content="Search Google, DuckDuckGo, Brave, and more without AI overviews. Automatically filters out AI-generated results." />
+		<meta property="og:image" content="https://unslopsearch.com/og-image.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://unslopsearch.com/" />
+		<meta property="twitter:title" content="Unslop Search - Search Without AI Overview" />
+		<meta property="twitter:description" content="Search Google, DuckDuckGo, Brave, and more without AI overviews. Automatically filters out AI-generated results." />
+		<meta property="twitter:image" content="https://unslopsearch.com/twitter-image.png" />
+
+		<!-- PWA -->
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="theme-color" content="#1a1a2e" />
+
+		<!-- OpenSearch - allows browsers to add as search engine -->
+		<link rel="search" type="application/opensearchdescription+xml" title="Unslop Search" href="/opensearch.xml" />
+		<link rel="canonical" href="https://unslopsearch.com/" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>
+				<div class="engine-selector" id="engine-selector">
+					<button class="engine-current" id="engine-current" type="button">
+						<span id="engine-name">Google</span>
+						<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<polyline points="6 9 12 15 18 9"></polyline>
+						</svg>
+					</button>
+					<div class="engine-dropdown" id="engine-dropdown">
+						<button class="engine-option selected" data-engine="google">Google</button>
+						<button class="engine-option" data-engine="duckduckgo">DuckDuckGo</button>
+						<button class="engine-option" data-engine="brave">Brave</button>
+						<button class="engine-option" data-engine="startpage">Startpage</button>
+						<button class="engine-option" data-engine="qwant">Qwant</button>
+						<button class="engine-option" data-engine="mojeek">Mojeek</button>
+						<button class="engine-option" data-engine="presearch">Presearch</button>
+					</div>
+				</div>
+				<span class="strikethrough">AI</span>
+			</h1>
+			<p class="subtitle">Search without the AI Overview</p>
+
+			<form class="search-box" id="search-form">
+				<input type="text" id="query" placeholder="Search..." autofocus />
+				<button type="submit">Search</button>
+			</form>
+
+			<p class="hint">
+				Appends <code id="hint-method">-ai</code> to your search
+				<button class="mode-toggle" id="mode-toggle" type="button" title="Switch mode"></button>
+			</p>
+
+			<details class="explainer">
+				<summary>What is this?</summary>
+				<p>
+					Search engines now show AI-generated summaries at the top of results.
+					These "AI Overviews" can be inaccurate and push real results down.
+				</p>
+				<p>
+					<strong>Unslop Search</strong> automatically applies filters to remove AI results,
+					giving you classic search results from real websites.
+				</p>
+				<p>
+					For Google, we append <code>-ai</code> to your query (or use <code>udm=14</code> mode).
+					Other engines use their own AI-disabling parameters.
+				</p>
+				<p>
+					<strong>Bonus:</strong> Set this as your default search engine, then come back anytime
+					to switch between Google, DuckDuckGo, Brave, and more. Your choice is remembered!
+				</p>
+			</details>
+
+			<details class="explainer">
+				<summary>Set as default search engine</summary>
+				<div class="browser-guide">
+					<div class="browser-section">
+						<h4>Chrome</h4>
+						<ol>
+							<li>Visit this site, then type anything in the search box and search once</li>
+							<li>Go to <strong>Settings</strong> &rarr; <strong>Search engine</strong></li>
+							<li>Click <strong>Manage search engines and site search</strong></li>
+							<li>Find "Unslop Search" under <strong>Inactive shortcuts</strong></li>
+							<li>Click <strong>Activate</strong>, then click the three dots &rarr; <strong>Make default</strong></li>
+						</ol>
+					</div>
+					<div class="browser-section">
+						<h4>Firefox</h4>
+						<ol>
+							<li>Visit this site</li>
+							<li>Right-click the address bar and select <strong>Add "Unslop Search"</strong></li>
+							<li>Go to <strong>Settings</strong> &rarr; <strong>Search</strong></li>
+							<li>Under "Default Search Engine", select "Unslop Search"</li>
+						</ol>
+					</div>
+					<div class="browser-section">
+						<h4>Edge</h4>
+						<ol>
+							<li>Visit this site and perform a search</li>
+							<li>Go to <strong>Settings</strong> &rarr; <strong>Privacy, search, and services</strong></li>
+							<li>Scroll down and click <strong>Address bar and search</strong></li>
+							<li>Click <strong>Manage search engines</strong>, find "Unslop Search", click the three dots &rarr; <strong>Make default</strong></li>
+						</ol>
+					</div>
+					<div class="browser-section">
+						<h4>Safari</h4>
+						<p>Safari doesn't support custom search engines natively. Use our <a href="#" id="safari-bookmark">bookmarklet</a> or install our browser extension instead.</p>
+					</div>
+				</div>
+			</details>
+
+			<footer class="site-footer">
+				<a href="/guides">Guides</a>
+				<span class="dot"></span>
+				<a href="/privacy">Privacy</a>
+				<span class="dot"></span>
+				<a href="https://github.com/unslopsearch/unslopsearch.com" target="_blank" rel="noopener">GitHub</a>
+			</footer>
+
+			<!-- PWA Install Banner (Android/Desktop) -->
+			<div class="install-banner" id="install-banner">
+				<span>Install for quick access</span>
+				<button id="install-btn" type="button">Install</button>
+				<button id="install-dismiss" type="button" aria-label="Dismiss">×</button>
+			</div>
+
+			<!-- iOS Install Banner -->
+			<div class="install-banner ios-banner" id="ios-install-banner">
+				<span>Tap <svg class="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> then <strong>Add to Home Screen</strong></span>
+				<button id="ios-install-dismiss" type="button" aria-label="Dismiss">×</button>
+			</div>
+		</div>
+
+		<script>
+			interface SearchEngine {
+				name: string;
+				url: string;
+				params: Record<string, string>;
+				querySuffix?: string;
+				queryParam: string;
+				hint: string;
+				modes?: { id: string; hint: string; url?: string; params?: Record<string, string>; querySuffix?: string }[];
+			}
+
+			const searchEngines: Record<string, SearchEngine> = {
+				google: {
+					name: 'Google',
+					url: 'https://www.google.com/search',
+					params: {},
+					querySuffix: ' -ai',
+					queryParam: 'q',
+					hint: '-ai',
+					modes: [
+						{ id: 'suffix', hint: '-ai', querySuffix: ' -ai' },
+						{ id: 'udm14', hint: 'udm=14', params: { udm: '14' } }
+					]
+				},
+				duckduckgo: {
+					name: 'DuckDuckGo',
+					url: 'https://noai.duckduckgo.com/',
+					params: {},
+					queryParam: 'q',
+					hint: 'noai subdomain',
+					modes: [
+						{ id: 'noai', hint: 'noai subdomain', url: 'https://noai.duckduckgo.com/' },
+						{ id: 'params', hint: 'kbg=-1', url: 'https://duckduckgo.com/', params: { kbg: '-1', kbe: '-1', kbd: '-1' } }
+					]
+				},
+				brave: {
+					name: 'Brave',
+					url: 'https://search.brave.com/search',
+					params: { summary: '0' },
+					queryParam: 'q',
+					hint: 'summary=0'
+				},
+				startpage: {
+					name: 'Startpage',
+					url: 'https://www.startpage.com/do/search',
+					params: {},
+					queryParam: 'q',
+					hint: 'no AI by default'
+				},
+				qwant: {
+					name: 'Qwant',
+					url: 'https://www.qwant.com/',
+					params: {},
+					queryParam: 'q',
+					hint: 'no AI by default'
+				},
+				mojeek: {
+					name: 'Mojeek',
+					url: 'https://www.mojeek.com/search',
+					params: {},
+					queryParam: 'q',
+					hint: 'no AI by default'
+				},
+				presearch: {
+					name: 'Presearch',
+					url: 'https://presearch.com/search',
+					params: {},
+					queryParam: 'q',
+					hint: 'no AI, decentralized'
+				}
+			};
+
+			let currentEngine = 'google';
+			let currentModeIndex = 0;
+
+			// Load saved preferences
+			const savedEngine = localStorage.getItem('searchEngine');
+			const savedMode = localStorage.getItem('searchMode');
+			if (savedEngine && searchEngines[savedEngine]) {
+				currentEngine = savedEngine;
+			}
+			if (savedMode !== null) {
+				currentModeIndex = parseInt(savedMode, 10) || 0;
+			}
+			updateUI();
+
+			function getCurrentMode() {
+				const config = searchEngines[currentEngine];
+				if (config.modes && config.modes[currentModeIndex]) {
+					return config.modes[currentModeIndex];
+				}
+				return null;
+			}
+
+			function updateUI() {
+				const config = searchEngines[currentEngine];
+				const mode = getCurrentMode();
+				const nameEl = document.getElementById('engine-name');
+				const hintEl = document.getElementById('hint-method');
+				const queryEl = document.getElementById('query') as HTMLInputElement;
+				const modeToggle = document.getElementById('mode-toggle');
+
+				if (nameEl) nameEl.textContent = config.name;
+				if (hintEl) hintEl.textContent = mode ? mode.hint : config.hint;
+				if (queryEl) queryEl.placeholder = `Search ${config.name}...`;
+
+				// Show/hide mode toggle
+				if (modeToggle) {
+					if (config.modes && config.modes.length > 1) {
+						modeToggle.style.display = 'inline-block';
+						modeToggle.textContent = `switch to ${config.modes[(currentModeIndex + 1) % config.modes.length].hint}`;
+					} else {
+						modeToggle.style.display = 'none';
+					}
+				}
+
+				// Update selected state
+				document.querySelectorAll('.engine-option').forEach(btn => {
+					btn.classList.toggle('selected', btn.getAttribute('data-engine') === currentEngine);
+				});
+			}
+
+			function buildSearchUrl(query: string): string {
+				const config = searchEngines[currentEngine];
+				const mode = getCurrentMode();
+
+				let finalQuery = query;
+				let params: Record<string, string> = { ...config.params };
+				let baseUrl = config.url;
+
+				if (mode) {
+					if (mode.url) {
+						baseUrl = mode.url;
+					}
+					if (mode.querySuffix) {
+						finalQuery = query + mode.querySuffix;
+					}
+					if (mode.params) {
+						params = mode.params; // Use mode params instead of merging
+					}
+				} else if (config.querySuffix) {
+					finalQuery = query + config.querySuffix;
+				}
+
+				const urlParams = new URLSearchParams({
+					[config.queryParam]: finalQuery,
+					...params
+				});
+				return `${baseUrl}?${urlParams.toString()}`;
+			}
+
+			// Toggle dropdown
+			const selector = document.getElementById('engine-selector');
+			const currentBtn = document.getElementById('engine-current');
+			const dropdown = document.getElementById('engine-dropdown');
+
+			currentBtn?.addEventListener('click', (e) => {
+				e.stopPropagation();
+				selector?.classList.toggle('open');
+			});
+
+			// Handle engine selection
+			dropdown?.addEventListener('click', (e) => {
+				const target = e.target as HTMLElement;
+				const engine = target.getAttribute('data-engine');
+				if (engine && searchEngines[engine]) {
+					currentEngine = engine;
+					currentModeIndex = 0; // Reset mode when switching engines
+					localStorage.setItem('searchEngine', engine);
+					localStorage.setItem('searchMode', '0');
+					updateUI();
+					selector?.classList.remove('open');
+				}
+			});
+
+			// Handle mode toggle
+			document.getElementById('mode-toggle')?.addEventListener('click', (e) => {
+				e.preventDefault();
+				const config = searchEngines[currentEngine];
+				if (config.modes && config.modes.length > 1) {
+					currentModeIndex = (currentModeIndex + 1) % config.modes.length;
+					localStorage.setItem('searchMode', currentModeIndex.toString());
+					updateUI();
+				}
+			});
+
+			// Close dropdown when clicking outside
+			document.addEventListener('click', () => {
+				selector?.classList.remove('open');
+			});
+
+			// Handle search
+			document.getElementById('search-form')?.addEventListener('submit', (e) => {
+				e.preventDefault();
+				const input = document.getElementById('query') as HTMLInputElement;
+				const query = input?.value.trim();
+				if (query) {
+					window.location.href = buildSearchUrl(query);
+				}
+			});
+
+			// Keyboard navigation
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Escape') {
+					selector?.classList.remove('open');
+				}
+			});
+
+			// PWA Install Logic
+			let deferredPrompt: any = null;
+			const installBanner = document.getElementById('install-banner');
+			const installBtn = document.getElementById('install-btn');
+			const installDismiss = document.getElementById('install-dismiss');
+			const iosInstallBanner = document.getElementById('ios-install-banner');
+			const iosInstallDismiss = document.getElementById('ios-install-dismiss');
+
+			// Detect iOS
+			const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+			const isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator as any).standalone;
+
+			// Check if already installed or dismissed
+			const isInstalled = window.matchMedia('(display-mode: standalone)').matches || isInStandaloneMode;
+			const isDismissed = localStorage.getItem('installDismissed');
+
+			// iOS: Show manual install instructions
+			if (isIOS && !isInstalled && !isDismissed && iosInstallBanner) {
+				setTimeout(() => {
+					iosInstallBanner.classList.add('visible');
+				}, 2000);
+			}
+
+			// Android/Desktop: Use beforeinstallprompt
+			window.addEventListener('beforeinstallprompt', (e) => {
+				e.preventDefault();
+				deferredPrompt = e;
+
+				// Show banner if not installed and not dismissed
+				if (!isInstalled && !isDismissed && installBanner) {
+					setTimeout(() => {
+						installBanner.classList.add('visible');
+					}, 2000);
+				}
+			});
+
+			installBtn?.addEventListener('click', async () => {
+				if (!deferredPrompt) return;
+
+				deferredPrompt.prompt();
+				const { outcome } = await deferredPrompt.userChoice;
+
+				if (outcome === 'accepted') {
+					installBanner?.classList.remove('visible');
+				}
+				deferredPrompt = null;
+			});
+
+			installDismiss?.addEventListener('click', () => {
+				installBanner?.classList.remove('visible');
+				localStorage.setItem('installDismissed', 'true');
+			});
+
+			iosInstallDismiss?.addEventListener('click', () => {
+				iosInstallBanner?.classList.remove('visible');
+				localStorage.setItem('installDismissed', 'true');
+			});
+
+			// Register Service Worker
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/sw.js').catch(() => {});
+			}
+		</script>
+	</body>
+</html>
+
+<style is:global>
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		background: #1a1a2e;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		padding: 20px;
+	}
+
+	.container {
+		text-align: center;
+		max-width: 600px;
+		width: 100%;
+	}
+
+	h1 {
+		color: #fff;
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+		font-weight: 300;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.4em;
+	}
+
+	.strikethrough {
+		text-decoration: line-through;
+		color: #ff6b6b;
+		opacity: 0.6;
+	}
+
+	/* Engine Selector */
+	.engine-selector {
+		position: relative;
+		display: inline-block;
+	}
+
+	.engine-current {
+		background: none;
+		border: none;
+		color: #fff;
+		font-size: inherit;
+		font-weight: inherit;
+		font-family: inherit;
+		cursor: pointer;
+		padding: 4px 0;
+		display: flex;
+		align-items: center;
+		gap: 0.2em;
+		border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+		transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+	}
+
+	.engine-current:hover {
+		border-bottom-color: rgba(255, 255, 255, 0.6);
+		transform: translateY(-1px);
+	}
+
+	.engine-current:active {
+		transform: translateY(0) scale(0.98);
+	}
+
+	.engine-selector.open .engine-current {
+		border-bottom-color: #4285f4;
+		color: #4285f4;
+	}
+
+	.chevron {
+		width: 0.6em;
+		height: 0.6em;
+		transition: transform 0.2s ease;
+		opacity: 0.5;
+	}
+
+	.engine-selector.open .chevron {
+		transform: rotate(180deg);
+		opacity: 1;
+	}
+
+	.engine-dropdown {
+		position: absolute;
+		top: calc(100% + 8px);
+		left: 50%;
+		transform: translateX(-50%) scale(0.95);
+		background: #252542;
+		border-radius: 12px;
+		padding: 8px;
+		min-width: 180px;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+		z-index: 100;
+	}
+
+	.engine-selector.open .engine-dropdown {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(-50%) scale(1);
+	}
+
+	.engine-option {
+		display: block;
+		width: 100%;
+		padding: 10px 16px;
+		background: none;
+		border: none;
+		color: #aaa;
+		font-size: 1rem;
+		font-family: inherit;
+		text-align: left;
+		cursor: pointer;
+		border-radius: 8px;
+		transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, padding-left 0.2s ease;
+	}
+
+	.engine-option:hover {
+		background: rgba(255, 255, 255, 0.08);
+		color: #fff;
+		padding-left: 20px;
+	}
+
+	.engine-option:active {
+		transform: scale(0.98);
+	}
+
+	.engine-option.selected {
+		color: #4285f4;
+		background: rgba(66, 133, 244, 0.1);
+	}
+
+	.engine-option.selected:hover {
+		background: rgba(66, 133, 244, 0.15);
+	}
+
+	.subtitle {
+		color: #888;
+		margin-bottom: 2rem;
+		font-size: 0.95rem;
+	}
+
+	.search-box {
+		display: flex;
+		gap: 0;
+		background: #fff;
+		border-radius: 28px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+		transition: box-shadow 0.3s ease, transform 0.2s ease;
+	}
+
+	.search-box:focus-within {
+		box-shadow: 0 4px 24px rgba(66, 133, 244, 0.4), 0 0 0 2px rgba(66, 133, 244, 0.3);
+		transform: scale(1.01);
+	}
+
+	input[type="text"] {
+		flex: 1;
+		padding: 16px 24px;
+		font-size: 1.1rem;
+		border: none;
+		outline: none;
+		background: transparent;
+	}
+
+	button[type="submit"] {
+		padding: 16px 28px;
+		background: #4285f4;
+		color: white;
+		border: none;
+		font-size: 1rem;
+		cursor: pointer;
+		font-weight: 500;
+		transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+	}
+
+	button[type="submit"]:hover {
+		background: #3367d6;
+		transform: scale(1.02);
+		box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+	}
+
+	button[type="submit"]:active {
+		transform: scale(0.98);
+	}
+
+	.hint {
+		margin-top: 1.5rem;
+		color: #666;
+		font-size: 0.85rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5em;
+		flex-wrap: wrap;
+	}
+
+	code {
+		background: rgba(255, 255, 255, 0.1);
+		padding: 2px 6px;
+		border-radius: 4px;
+		color: #aaa;
+	}
+
+	.mode-toggle {
+		background: none;
+		border: none;
+		color: #4285f4;
+		font-size: 0.85rem;
+		font-family: inherit;
+		cursor: pointer;
+		padding: 4px 8px;
+		margin: -4px -8px;
+		border-radius: 4px;
+		opacity: 0.7;
+		transition: opacity 0.2s ease, background 0.2s ease, transform 0.15s ease;
+	}
+
+	.mode-toggle:hover {
+		opacity: 1;
+		background: rgba(66, 133, 244, 0.1);
+		transform: translateY(-1px);
+	}
+
+	.mode-toggle:active {
+		transform: translateY(0) scale(0.97);
+	}
+
+	/* Explainer */
+	.explainer {
+		margin-top: 3rem;
+		text-align: left;
+		color: #666;
+		font-size: 0.9rem;
+		max-width: 480px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.explainer summary {
+		cursor: pointer;
+		text-align: center;
+		color: #888;
+		font-size: 0.85rem;
+		padding: 0.75rem 1rem;
+		border-radius: 8px;
+		transition: color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+	}
+
+	.explainer summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.explainer summary::before {
+		content: '▸';
+		display: inline-block;
+		transition: transform 0.25s ease;
+		font-size: 0.75em;
+	}
+
+	.explainer[open] summary::before {
+		transform: rotate(90deg);
+	}
+
+	.explainer summary:hover {
+		color: #bbb;
+		background: rgba(255, 255, 255, 0.03);
+	}
+
+	.explainer summary:active {
+		transform: scale(0.98);
+	}
+
+	.explainer[open] summary {
+		margin-bottom: 1rem;
+		color: #aaa;
+	}
+
+	.explainer p {
+		margin: 0 0 1rem 0;
+		line-height: 1.6;
+		color: #777;
+	}
+
+	.explainer p:last-child {
+		margin-bottom: 0;
+	}
+
+	.explainer strong {
+		color: #999;
+	}
+
+	.explainer code {
+		font-size: 0.85em;
+	}
+
+	/* Browser Guide */
+	.browser-guide {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.browser-section h4 {
+		color: #aaa;
+		font-size: 0.9rem;
+		margin: 0 0 0.5rem 0;
+		font-weight: 600;
+	}
+
+	.browser-section ol {
+		margin: 0;
+		padding-left: 1.25rem;
+		color: #777;
+		line-height: 1.7;
+	}
+
+	.browser-section ol li {
+		margin-bottom: 0.25rem;
+	}
+
+	.browser-section ol li:last-child {
+		margin-bottom: 0;
+	}
+
+	.browser-section p {
+		margin: 0;
+	}
+
+	.browser-section a {
+		color: #4285f4;
+		text-decoration: none;
+		position: relative;
+		transition: color 0.2s ease;
+	}
+
+	.browser-section a::after {
+		content: '';
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background: #4285f4;
+		transition: width 0.25s ease;
+	}
+
+	.browser-section a:hover {
+		color: #5a9cff;
+	}
+
+	.browser-section a:hover::after {
+		width: 100%;
+	}
+
+	/* Install Banner */
+	.install-banner {
+		position: fixed;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%) translateY(100px);
+		background: #252542;
+		padding: 12px 16px;
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+		opacity: 0;
+		visibility: hidden;
+		transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+		z-index: 1000;
+	}
+
+	.install-banner.visible {
+		transform: translateX(-50%) translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.install-banner span {
+		color: #aaa;
+		font-size: 0.9rem;
+	}
+
+	.install-banner #install-btn {
+		background: #4285f4;
+		color: white;
+		border: none;
+		padding: 8px 16px;
+		border-radius: 8px;
+		font-size: 0.85rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+	}
+
+	.install-banner #install-btn:hover {
+		background: #3367d6;
+		transform: scale(1.05);
+		box-shadow: 0 2px 8px rgba(66, 133, 244, 0.4);
+	}
+
+	.install-banner #install-btn:active {
+		transform: scale(0.98);
+	}
+
+	.install-banner #install-dismiss,
+	.install-banner #ios-install-dismiss {
+		background: none;
+		border: none;
+		color: #666;
+		font-size: 1.2rem;
+		cursor: pointer;
+		padding: 4px 8px;
+		line-height: 1;
+		border-radius: 4px;
+		transition: color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+	}
+
+	.install-banner #install-dismiss:hover,
+	.install-banner #ios-install-dismiss:hover {
+		color: #999;
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	.install-banner #install-dismiss:active,
+	.install-banner #ios-install-dismiss:active {
+		transform: scale(0.9);
+	}
+
+	/* iOS Banner */
+	.ios-banner span {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.ios-banner .share-icon {
+		width: 1.1em;
+		height: 1.1em;
+		vertical-align: middle;
+		color: #4285f4;
+	}
+
+	.ios-banner strong {
+		color: #fff;
+	}
+
+	@media (max-width: 480px) {
+		.install-banner {
+			left: 10px;
+			right: 10px;
+			transform: translateX(0) translateY(100px);
+			width: auto;
+		}
+
+		.install-banner.visible {
+			transform: translateX(0) translateY(0);
+		}
+	}
+
+	/* Footer */
+	.site-footer {
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.05);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+		font-size: 0.85rem;
+	}
+
+	.site-footer a {
+		color: #666;
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.site-footer a:hover {
+		color: #888;
+	}
+
+	.site-footer .dot {
+		width: 3px;
+		height: 3px;
+		background: #444;
+		border-radius: 50%;
+	}
+</style>

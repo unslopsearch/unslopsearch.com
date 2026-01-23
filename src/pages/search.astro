@@ -1,0 +1,173 @@
+---
+// This page handles incoming OpenSearch queries
+// It reads the user's saved preferences and redirects to the appropriate search engine
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="noindex" />
+		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<title>Redirecting... | Unslop Search</title>
+	</head>
+	<body>
+		<div class="loader">
+			<div class="spinner"></div>
+			<p>Searching without AI...</p>
+		</div>
+
+		<script>
+			interface SearchEngine {
+				name: string;
+				url: string;
+				params: Record<string, string>;
+				querySuffix?: string;
+				queryParam: string;
+				modes?: { id: string; url?: string; params?: Record<string, string>; querySuffix?: string }[];
+			}
+
+			const searchEngines: Record<string, SearchEngine> = {
+				google: {
+					name: 'Google',
+					url: 'https://www.google.com/search',
+					params: {},
+					querySuffix: ' -ai',
+					queryParam: 'q',
+					modes: [
+						{ id: 'suffix', querySuffix: ' -ai' },
+						{ id: 'udm14', params: { udm: '14' } }
+					]
+				},
+				duckduckgo: {
+					name: 'DuckDuckGo',
+					url: 'https://noai.duckduckgo.com/',
+					params: {},
+					queryParam: 'q',
+					modes: [
+						{ id: 'noai', url: 'https://noai.duckduckgo.com/' },
+						{ id: 'params', url: 'https://duckduckgo.com/', params: { kbg: '-1', kbe: '-1', kbd: '-1' } }
+					]
+				},
+				brave: {
+					name: 'Brave',
+					url: 'https://search.brave.com/search',
+					params: { summary: '0' },
+					queryParam: 'q'
+				},
+				startpage: {
+					name: 'Startpage',
+					url: 'https://www.startpage.com/do/search',
+					params: {},
+					queryParam: 'q'
+				},
+				qwant: {
+					name: 'Qwant',
+					url: 'https://www.qwant.com/',
+					params: {},
+					queryParam: 'q'
+				},
+				mojeek: {
+					name: 'Mojeek',
+					url: 'https://www.mojeek.com/search',
+					params: {},
+					queryParam: 'q'
+				},
+				presearch: {
+					name: 'Presearch',
+					url: 'https://presearch.com/search',
+					params: {},
+					queryParam: 'q'
+				}
+			};
+
+			function buildSearchUrl(query: string, engine: string, modeIndex: number): string {
+				const config = searchEngines[engine] || searchEngines.google;
+				const mode = config.modes?.[modeIndex] || null;
+
+				let finalQuery = query;
+				let params: Record<string, string> = { ...config.params };
+				let baseUrl = config.url;
+
+				if (mode) {
+					if (mode.url) {
+						baseUrl = mode.url;
+					}
+					if (mode.querySuffix) {
+						finalQuery = query + mode.querySuffix;
+					}
+					if (mode.params) {
+						params = mode.params; // Use mode params instead of merging
+					}
+				} else if (config.querySuffix) {
+					finalQuery = query + config.querySuffix;
+				}
+
+				const urlParams = new URLSearchParams({
+					[config.queryParam]: finalQuery,
+					...params
+				});
+				return `${baseUrl}?${urlParams.toString()}`;
+			}
+
+			// Get query from URL
+			const urlParams = new URLSearchParams(window.location.search);
+			const query = urlParams.get('q')?.trim();
+
+			if (query) {
+				// Load saved preferences
+				const savedEngine = localStorage.getItem('searchEngine') || 'google';
+				const savedMode = parseInt(localStorage.getItem('searchMode') || '0', 10);
+
+				// Build URL and redirect
+				const searchUrl = buildSearchUrl(query, savedEngine, savedMode);
+				window.location.replace(searchUrl);
+			} else {
+				// No query, redirect to home
+				window.location.replace('/');
+			}
+		</script>
+
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				background: #1a1a2e;
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.loader {
+				text-align: center;
+			}
+
+			.spinner {
+				width: 48px;
+				height: 48px;
+				border: 3px solid rgba(255, 255, 255, 0.1);
+				border-top-color: #4285f4;
+				border-radius: 50%;
+				animation: spin 0.8s linear infinite;
+				margin: 0 auto 1rem;
+			}
+
+			@keyframes spin {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+
+			p {
+				color: #888;
+				font-size: 0.95rem;
+			}
+		</style>
+	</body>
+</html>

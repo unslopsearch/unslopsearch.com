@@ -1,0 +1,748 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+		<!-- Primary Meta Tags -->
+		<title>How to Set Default Search Engine - Chrome, Firefox, Safari, Edge Guide</title>
+		<meta name="title" content="How to Set Default Search Engine - Chrome, Firefox, Safari, Edge Guide" />
+		<meta name="description" content="Step-by-step instructions to change your default search engine in Chrome, Firefox, Safari, and Edge. Set DuckDuckGo, Brave, or any search engine as default." />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://unslopsearch.com/guides/set-default-search-engine" />
+		<meta property="og:title" content="How to Set Default Search Engine - Chrome, Firefox, Safari, Edge Guide" />
+		<meta property="og:description" content="Step-by-step instructions to change your default search engine in Chrome, Firefox, Safari, and Edge." />
+		<link rel="canonical" href="https://unslopsearch.com/guides/set-default-search-engine/" />
+
+		<!-- Schema.org FAQ -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "How do I change my default search engine in Chrome?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "In Chrome, go to Settings > Search engine > Manage search engines and site search. Find your preferred search engine and click the three dots, then select 'Make default'. You can also add custom search engines by clicking 'Add' in the Site Search section."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "How do I set DuckDuckGo as my default search engine?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "In Chrome: Settings > Search engine > select DuckDuckGo. In Firefox: Settings > Search > Default Search Engine > DuckDuckGo. In Safari: Preferences > Search > Search engine > DuckDuckGo. In Edge: Settings > Privacy, search, and services > Address bar and search > select DuckDuckGo."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Can I add a custom search engine to my browser?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Yes. Chrome, Firefox, and Edge all support adding custom search engines. You need the search URL with %s as a placeholder for the search query. For example: https://duckduckgo.com/?q=%s or https://unslopsearch.com/search?q=%s"
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Why can't I change the default search engine in Safari?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Safari only allows you to choose from a preset list of search engines (Google, Yahoo, Bing, DuckDuckGo, Ecosia). You cannot add custom search engines. To use other search engines, you can create a bookmark or use a browser extension."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Why is my Chrome custom search engine not working?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Common fixes: Make sure you included %s in the URL (the search query placeholder), restart Chrome after adding the engine, clear your browser cache, and check for conflicting extensions. If Chrome is managed by your organization, search engine settings may be restricted."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "How do I add a custom search engine to Firefox?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Visit the search engine site, click the address bar, and look for the + icon to add it. Alternatively, go to about:config, set browser.urlbar.update2.engineAliasRefresh to true, then add custom engines in Settings > Search > Search Shortcuts."
+					}
+				}
+			]
+		}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="breadcrumb">
+				<a href="/">Home</a>
+				<span>/</span>
+				<a href="/guides">Guides</a>
+				<span>/</span>
+				<span>Set Default Search Engine</span>
+			</nav>
+
+			<h1>How to Set Your Default Search Engine</h1>
+			<p class="intro">Change your browser's default search engine in Chrome, Firefox, Safari, and Edge.</p>
+
+			<nav class="toc">
+				<h2>Contents</h2>
+				<ol>
+					<li><a href="#chrome">Google Chrome</a></li>
+					<li><a href="#chrome-troubleshooting">Chrome Custom Search Not Working</a></li>
+					<li><a href="#firefox">Mozilla Firefox</a></li>
+					<li><a href="#firefox-custom">Firefox Custom Search Engine</a></li>
+					<li><a href="#safari">Safari</a></li>
+					<li><a href="#edge">Microsoft Edge</a></li>
+					<li><a href="#custom">Adding Custom Search Engines</a></li>
+					<li><a href="#mobile">Mobile Browsers</a></li>
+					<li><a href="#faq">FAQ</a></li>
+				</ol>
+			</nav>
+
+			<section id="chrome">
+				<h2>Google Chrome</h2>
+				<div class="browser-section">
+					<h3>Change Default Search Engine</h3>
+					<ol>
+						<li>Click the <strong>three dots menu</strong> (top right) and select <strong>Settings</strong></li>
+						<li>Click <strong>Search engine</strong> in the left sidebar</li>
+						<li>Click the dropdown under "Search engine used in the address bar"</li>
+						<li>Select your preferred search engine</li>
+					</ol>
+
+					<h3>Add a Custom Search Engine</h3>
+					<ol>
+						<li>Go to <strong>Settings</strong> &rarr; <strong>Search engine</strong></li>
+						<li>Click <strong>Manage search engines and site search</strong></li>
+						<li>Scroll to <strong>Site search</strong> and click <strong>Add</strong></li>
+						<li>Enter:
+							<ul>
+								<li><strong>Name:</strong> Unslop Search</li>
+								<li><strong>Shortcut:</strong> unslop</li>
+								<li><strong>URL:</strong> <code>https://unslopsearch.com/search?q=%s</code></li>
+							</ul>
+						</li>
+						<li>Click <strong>Add</strong></li>
+						<li>Find it in the list, click the three dots, select <strong>Make default</strong></li>
+					</ol>
+
+					<div class="tip">
+						<strong>Tip:</strong> After adding a custom search engine, you can type its shortcut (e.g., "unslop") in the address bar, press Tab, then type your search query.
+					</div>
+				</div>
+			</section>
+
+			<section id="chrome-troubleshooting">
+				<h2>Chrome Custom Search Engine Not Working?</h2>
+				<p>Having trouble adding or using a custom search engine in Chrome? Here are solutions for common issues.</p>
+
+				<div class="browser-section">
+					<h3>Issue: Search Engine Doesn't Appear</h3>
+					<ul>
+						<li><strong>Check the URL format:</strong> Make sure you included <code>%s</code> in the URL - this is the placeholder for your search query</li>
+						<li><strong>Restart Chrome:</strong> Close and reopen Chrome after adding the search engine</li>
+						<li><strong>Visit the site first:</strong> Chrome sometimes auto-detects search engines after you visit them</li>
+					</ul>
+
+					<h3>Issue: Still Seeing AI Results</h3>
+					<ul>
+						<li><strong>Verify the URL:</strong> Make sure your custom search URL includes <code>&udm=14</code> for Google (e.g., <code>https://www.google.com/search?q=%s&udm=14</code>)</li>
+						<li><strong>Clear browser cache:</strong> Go to Settings &rarr; Privacy and security &rarr; Clear browsing data</li>
+						<li><strong>Check for conflicting extensions:</strong> Some extensions may modify search URLs</li>
+					</ul>
+
+					<h3>Issue: Can't Set as Default</h3>
+					<ul>
+						<li><strong>Managed Chrome:</strong> Some work or school Chrome installations restrict changing the default search engine</li>
+						<li><strong>Create a new profile:</strong> Go to chrome://settings/people and create a new Chrome profile</li>
+						<li><strong>Check policies:</strong> Type <code>chrome://policy</code> to see if search engine settings are managed</li>
+					</ul>
+
+					<h3>Issue: Search Engine Keeps Resetting</h3>
+					<ul>
+						<li><strong>Check for malware:</strong> Run Chrome's built-in cleanup tool at Settings &rarr; Reset and clean up</li>
+						<li><strong>Review extensions:</strong> Some extensions may forcibly change your search engine</li>
+						<li><strong>Sync settings:</strong> If Chrome Sync is on, check your synced search engine settings</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="firefox">
+				<h2>Mozilla Firefox</h2>
+				<div class="browser-section">
+					<h3>Change Default Search Engine</h3>
+					<ol>
+						<li>Click the <strong>hamburger menu</strong> (three lines, top right)</li>
+						<li>Select <strong>Settings</strong></li>
+						<li>Click <strong>Search</strong> in the left sidebar</li>
+						<li>Under "Default Search Engine", select your preferred engine</li>
+					</ol>
+
+					<h3>Add a Custom Search Engine</h3>
+					<ol>
+						<li>Visit <a href="/">unslopsearch.com</a></li>
+						<li>Click in the <strong>address bar</strong></li>
+						<li>Look for a green <strong>+</strong> icon with a magnifying glass</li>
+						<li>Click it to add "Unslop Search" as an option</li>
+						<li>Go to Settings &rarr; Search to set it as default</li>
+					</ol>
+
+					<h3>Alternative: Manual Add via about:config</h3>
+					<ol>
+						<li>Type <code>about:config</code> in address bar</li>
+						<li>Accept the warning</li>
+						<li>Search for <code>browser.urlbar.update2.engineAliasRefresh</code></li>
+						<li>Set to <code>true</code></li>
+						<li>Now you can add custom engines in Settings &rarr; Search</li>
+					</ol>
+				</div>
+			</section>
+
+			<section id="firefox-custom">
+				<h2>Adding a Custom Search Engine in Firefox</h2>
+				<p>Firefox makes it easy to add custom search engines. Here's a detailed guide for adding Unslop Search or any custom search URL.</p>
+
+				<div class="browser-section">
+					<h3>Method 1: OpenSearch Auto-Discovery (Easiest)</h3>
+					<p>Many sites (including Unslop Search) support automatic discovery:</p>
+					<ol>
+						<li>Visit <a href="/">unslopsearch.com</a></li>
+						<li>Click in the <strong>address bar</strong></li>
+						<li>Look for a green <strong>+</strong> icon with a magnifying glass at the bottom of the dropdown</li>
+						<li>Click "Add Unslop Search"</li>
+						<li>Go to Settings &rarr; Search to set as default</li>
+					</ol>
+				</div>
+
+				<div class="browser-section">
+					<h3>Method 2: Add via Search Bar</h3>
+					<ol>
+						<li>Enable the search bar: Settings &rarr; Search &rarr; check "Add search bar in toolbar"</li>
+						<li>Visit unslopsearch.com and perform a search</li>
+						<li>Right-click the search bar</li>
+						<li>Select "Add Unslop Search"</li>
+					</ol>
+				</div>
+
+				<div class="browser-section">
+					<h3>Method 3: Manual via about:config (Advanced)</h3>
+					<p>For complete control over custom search engines:</p>
+					<ol>
+						<li>Type <code>about:config</code> in the address bar and accept the warning</li>
+						<li>Search for <code>browser.urlbar.update2.engineAliasRefresh</code></li>
+						<li>Double-click to set it to <code>true</code></li>
+						<li>Go to Settings &rarr; Search</li>
+						<li>Scroll to "Search Shortcuts" and click "Add"</li>
+						<li>Enter the search engine details:
+							<ul>
+								<li><strong>Name:</strong> Unslop Search</li>
+								<li><strong>URL:</strong> <code>https://unslopsearch.com/search?q=%s</code></li>
+								<li><strong>Alias:</strong> @unslop</li>
+							</ul>
+						</li>
+					</ol>
+				</div>
+
+				<div class="browser-section">
+					<h3>Firefox Custom Search Engine Troubleshooting</h3>
+					<ul>
+						<li><strong>+ icon not appearing:</strong> The site must have an OpenSearch descriptor. Try the about:config method instead.</li>
+						<li><strong>Can't find search settings:</strong> Type <code>about:preferences#search</code> in the address bar</li>
+						<li><strong>Search engine disappeared:</strong> Firefox may remove unused engines. Re-add it following the steps above.</li>
+						<li><strong>Sync issues:</strong> Check that Firefox Sync includes search engine settings</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="safari">
+				<h2>Safari</h2>
+				<div class="browser-section">
+					<h3>Change Default Search Engine</h3>
+					<ol>
+						<li>Open Safari and click <strong>Safari</strong> in the menu bar</li>
+						<li>Select <strong>Settings</strong> (or Preferences)</li>
+						<li>Click the <strong>Search</strong> tab</li>
+						<li>Choose your preferred search engine from the dropdown</li>
+					</ol>
+
+					<div class="warning">
+						<strong>Limitation:</strong> Safari only offers preset options: Google, Yahoo, Bing, DuckDuckGo, and Ecosia. You cannot add custom search engines natively.
+					</div>
+
+					<h3>Workarounds for Custom Search Engines</h3>
+					<ul>
+						<li><strong>Bookmark:</strong> Create a bookmark to <code>https://unslopsearch.com/search?q=SEARCH_TERM</code></li>
+						<li><strong>Extension:</strong> Use a Safari extension that redirects searches</li>
+						<li><strong>Homepage:</strong> Set unslopsearch.com as your homepage</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="edge">
+				<h2>Microsoft Edge</h2>
+				<div class="browser-section">
+					<h3>Change Default Search Engine</h3>
+					<ol>
+						<li>Click the <strong>three dots menu</strong> (top right) and select <strong>Settings</strong></li>
+						<li>Click <strong>Privacy, search, and services</strong> in the left sidebar</li>
+						<li>Scroll down to <strong>Address bar and search</strong></li>
+						<li>Click <strong>Search engines used in the address bar</strong></li>
+						<li>Select your preferred search engine</li>
+					</ol>
+
+					<h3>Add a Custom Search Engine</h3>
+					<ol>
+						<li>Go to <strong>Settings</strong> &rarr; <strong>Privacy, search, and services</strong></li>
+						<li>Click <strong>Address bar and search</strong></li>
+						<li>Click <strong>Manage search engines</strong></li>
+						<li>Click <strong>Add</strong></li>
+						<li>Enter:
+							<ul>
+								<li><strong>Name:</strong> Unslop Search</li>
+								<li><strong>Keyword:</strong> unslop</li>
+								<li><strong>URL:</strong> <code>https://unslopsearch.com/search?q=%s</code></li>
+							</ul>
+						</li>
+						<li>Find it in the list and click <strong>Make default</strong></li>
+					</ol>
+				</div>
+			</section>
+
+			<section id="custom">
+				<h2>Adding Custom Search Engines</h2>
+				<p>To add any search engine as your default, you need its search URL with <code>%s</code> as a placeholder for your query.</p>
+
+				<h3>Common Search Engine URLs</h3>
+				<div class="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>Search Engine</th>
+								<th>URL (use %s for query)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Unslop Search</strong></td>
+								<td><code>https://unslopsearch.com/search?q=%s</code></td>
+							</tr>
+							<tr>
+								<td><strong>Google (no AI)</strong></td>
+								<td><code>https://www.google.com/search?q=%s&udm=14</code></td>
+							</tr>
+							<tr>
+								<td><strong>DuckDuckGo</strong></td>
+								<td><code>https://duckduckgo.com/?q=%s</code></td>
+							</tr>
+							<tr>
+								<td><strong>Brave Search</strong></td>
+								<td><code>https://search.brave.com/search?q=%s</code></td>
+							</tr>
+							<tr>
+								<td><strong>Startpage</strong></td>
+								<td><code>https://www.startpage.com/sp/search?query=%s</code></td>
+							</tr>
+							<tr>
+								<td><strong>Qwant</strong></td>
+								<td><code>https://www.qwant.com/?q=%s</code></td>
+							</tr>
+							<tr>
+								<td><strong>Mojeek</strong></td>
+								<td><code>https://www.mojeek.com/search?q=%s</code></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section id="mobile">
+				<h2>Mobile Browsers</h2>
+
+				<div class="browser-section">
+					<h3>Chrome on Android</h3>
+					<ol>
+						<li>Tap the <strong>three dots</strong> menu</li>
+						<li>Go to <strong>Settings</strong> &rarr; <strong>Search engine</strong></li>
+						<li>Select your preferred search engine</li>
+					</ol>
+					<p>Note: Custom search engines on Android Chrome require using a site first, then it may appear as an option.</p>
+				</div>
+
+				<div class="browser-section">
+					<h3>Safari on iOS</h3>
+					<ol>
+						<li>Open the <strong>Settings</strong> app</li>
+						<li>Scroll down and tap <strong>Safari</strong></li>
+						<li>Tap <strong>Search Engine</strong></li>
+						<li>Choose from Google, Yahoo, Bing, DuckDuckGo, or Ecosia</li>
+					</ol>
+				</div>
+
+				<div class="browser-section">
+					<h3>Firefox on Mobile</h3>
+					<ol>
+						<li>Tap the <strong>three dots</strong> menu</li>
+						<li>Go to <strong>Settings</strong> &rarr; <strong>Search</strong></li>
+						<li>Tap <strong>Default search engine</strong></li>
+						<li>Select your preferred engine or tap <strong>Add search engine</strong></li>
+					</ol>
+				</div>
+			</section>
+
+			<section id="faq">
+				<h2>Frequently Asked Questions</h2>
+
+				<div class="faq-item">
+					<h3>How do I change my default search engine in Chrome?</h3>
+					<p>Go to Settings &rarr; Search engine, then select your preferred search engine from the dropdown. For custom engines, click "Manage search engines and site search" and add your own.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>How do I set DuckDuckGo as my default search engine?</h3>
+					<p>DuckDuckGo is available as a default option in all major browsers. In Chrome: Settings &rarr; Search engine &rarr; DuckDuckGo. In Firefox: Settings &rarr; Search &rarr; DuckDuckGo. In Safari: Settings &rarr; Search &rarr; DuckDuckGo.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>Can I add a custom search engine to my browser?</h3>
+					<p>Yes, in Chrome, Firefox, and Edge. You need the search URL with <code>%s</code> as the query placeholder. Safari does not support custom search engines natively.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>Why can't I change the default search engine in Safari?</h3>
+					<p>Safari only offers preset options (Google, Yahoo, Bing, DuckDuckGo, Ecosia). Apple doesn't allow custom search engines. Use a bookmark, extension, or set your preferred search site as your homepage instead.</p>
+				</div>
+
+				<div class="faq-item">
+					<h3>How do I make Google show classic results without AI?</h3>
+					<p>Add <code>&udm=14</code> to the search URL. Set up a custom search engine with this URL: <code>https://www.google.com/search?q=%s&udm=14</code>. Or use <a href="/">Unslop Search</a> which does this automatically.</p>
+				</div>
+			</section>
+
+			<div class="next-steps">
+				<h2>Next Steps</h2>
+				<div class="next-links">
+					<a href="/guides/best-private-search-engines">
+						<span>Compare</span>
+						<strong>Best Private Search Engines</strong>
+					</a>
+					<a href="/guides/disable-ai-overview-google">
+						<span>Guide</span>
+						<strong>Disable Google AI</strong>
+					</a>
+					<a href="/guides/duckduckgo-vs-google">
+						<span>Compare</span>
+						<strong>DuckDuckGo vs Google</strong>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		background: #1a1a2e;
+		min-height: 100vh;
+		margin: 0;
+		padding: 40px 20px;
+		color: #ccc;
+		line-height: 1.7;
+	}
+
+	.container {
+		max-width: 750px;
+		margin: 0 auto;
+	}
+
+	.breadcrumb {
+		font-size: 0.85rem;
+		margin-bottom: 2rem;
+	}
+
+	.breadcrumb a {
+		color: #4285f4;
+		text-decoration: none;
+	}
+
+	.breadcrumb a:hover {
+		text-decoration: underline;
+	}
+
+	.breadcrumb span {
+		color: #555;
+		margin: 0 0.5rem;
+	}
+
+	h1 {
+		color: #fff;
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
+		font-weight: 400;
+		line-height: 1.3;
+	}
+
+	.intro {
+		color: #888;
+		font-size: 1.1rem;
+		margin-bottom: 2rem;
+	}
+
+	.toc {
+		background: rgba(255, 255, 255, 0.03);
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin-bottom: 3rem;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.toc h2 {
+		color: #888;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin: 0 0 1rem 0;
+	}
+
+	.toc ol {
+		margin: 0;
+		padding-left: 1.25rem;
+		color: #aaa;
+		columns: 2;
+	}
+
+	@media (max-width: 500px) {
+		.toc ol {
+			columns: 1;
+		}
+	}
+
+	.toc li {
+		margin-bottom: 0.4rem;
+	}
+
+	.toc a {
+		color: #4285f4;
+		text-decoration: none;
+	}
+
+	.toc a:hover {
+		text-decoration: underline;
+	}
+
+	section {
+		margin-bottom: 3rem;
+	}
+
+	h2 {
+		color: #fff;
+		font-size: 1.4rem;
+		margin-bottom: 1rem;
+		font-weight: 500;
+		padding-top: 1rem;
+	}
+
+	h3 {
+		color: #ddd;
+		font-size: 1.05rem;
+		margin: 1.5rem 0 0.75rem 0;
+		font-weight: 500;
+	}
+
+	p {
+		margin: 0 0 1rem 0;
+		color: #aaa;
+	}
+
+	ul, ol {
+		margin: 0 0 1rem 0;
+		padding-left: 1.5rem;
+		color: #aaa;
+	}
+
+	li {
+		margin-bottom: 0.5rem;
+	}
+
+	strong {
+		color: #ddd;
+	}
+
+	a {
+		color: #4285f4;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	code {
+		background: rgba(255, 255, 255, 0.1);
+		padding: 2px 6px;
+		border-radius: 4px;
+		color: #e0e0e0;
+		font-size: 0.9em;
+	}
+
+	.browser-section {
+		background: #252542;
+		border-radius: 12px;
+		padding: 1.5rem;
+		margin: 1rem 0;
+	}
+
+	.browser-section h3 {
+		margin-top: 0;
+		color: #fff;
+	}
+
+	.browser-section h3:not(:first-child) {
+		margin-top: 1.5rem;
+	}
+
+	.browser-section ol {
+		margin-bottom: 0;
+	}
+
+	.browser-section ul {
+		padding-left: 1.25rem;
+	}
+
+	.tip {
+		background: rgba(66, 133, 244, 0.1);
+		border-left: 3px solid #4285f4;
+		padding: 1rem;
+		border-radius: 0 8px 8px 0;
+		margin: 1rem 0;
+	}
+
+	.warning {
+		background: rgba(255, 193, 7, 0.1);
+		border-left: 3px solid #ffc107;
+		padding: 1rem;
+		border-radius: 0 8px 8px 0;
+		margin: 1rem 0;
+	}
+
+	.table-wrapper {
+		overflow-x: auto;
+		margin: 1rem 0;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.9rem;
+	}
+
+	th, td {
+		padding: 0.75rem;
+		text-align: left;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	th {
+		color: #888;
+		font-weight: 500;
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		letter-spacing: 0.5px;
+	}
+
+	td {
+		color: #aaa;
+	}
+
+	td code {
+		font-size: 0.8rem;
+		word-break: break-all;
+	}
+
+	.faq-item {
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.faq-item:last-child {
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.faq-item h3 {
+		color: #fff;
+		margin-top: 0;
+	}
+
+	.faq-item p:last-child {
+		margin-bottom: 0;
+	}
+
+	.next-steps {
+		background: rgba(66, 133, 244, 0.05);
+		border-radius: 12px;
+		padding: 2rem;
+		margin-top: 3rem;
+		border: 1px solid rgba(66, 133, 244, 0.1);
+	}
+
+	.next-steps h2 {
+		margin-top: 0;
+		padding-top: 0;
+		font-size: 1.1rem;
+		color: #888;
+	}
+
+	.next-links {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		gap: 1rem;
+	}
+
+	.next-links a {
+		display: block;
+		padding: 1rem;
+		background: #252542;
+		border-radius: 8px;
+		text-decoration: none;
+		transition: background 0.2s, transform 0.2s;
+	}
+
+	.next-links a:hover {
+		background: #2a2a4a;
+		transform: translateY(-2px);
+		text-decoration: none;
+	}
+
+	.next-links span {
+		display: block;
+		font-size: 0.75rem;
+		color: #666;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-bottom: 0.25rem;
+	}
+
+	.next-links strong {
+		color: #4285f4;
+		font-weight: 500;
+	}
+</style>
