@@ -33,21 +33,28 @@ const searchEngines = {
     url: 'https://www.startpage.com/do/search',
     params: {},
     queryParam: 'q',
-    hint: 'no AI'
+    hint: 'no AI by default'
   },
   qwant: {
     name: 'Qwant',
     url: 'https://www.qwant.com/',
     params: {},
     queryParam: 'q',
-    hint: 'no AI'
+    hint: 'no AI by default'
   },
   mojeek: {
     name: 'Mojeek',
     url: 'https://www.mojeek.com/search',
     params: {},
     queryParam: 'q',
-    hint: 'no AI'
+    hint: 'no AI by default'
+  },
+  presearch: {
+    name: 'Presearch',
+    url: 'https://presearch.com/search',
+    params: {},
+    queryParam: 'q',
+    hint: 'no AI, decentralized'
   }
 };
 

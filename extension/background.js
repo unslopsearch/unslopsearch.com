@@ -43,6 +43,12 @@ const searchEngines = {
     url: 'https://www.mojeek.com/search',
     params: {},
     queryParam: 'q'
+  },
+  presearch: {
+    name: 'Presearch',
+    url: 'https://presearch.com/search',
+    params: {},
+    queryParam: 'q'
   }
 };
 

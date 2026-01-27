@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Unslop Search",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Search Google, DuckDuckGo, Brave, and more without AI overviews",
   "icons": {
     "16": "icons/icon-16.png",
@@ -26,8 +26,7 @@
   },
   "permissions": [
     "storage",
-    "webNavigation",
-    "declarativeNetRequest"
+    "webNavigation"
   ],
   "host_permissions": [
     "*://www.google.com/*",
@@ -43,8 +42,5 @@
     "*://duckduckgo.com/*",
     "*://noai.duckduckgo.com/*",
     "*://search.brave.com/*"
-  ],
-  "chrome_url_overrides": {
-    "newtab": "newtab.html"
-  }
+  ]
 }
