@@ -14,8 +14,17 @@ Unslop Search solves this by:
 - Letting you switch between search engines easily
 - Storing preferences locally (no accounts, no tracking)
 
+## Chrome Extension
+
+Install the Chrome extension to disable AI features on search engines directly from your browser:
+
+**[Install from Chrome Web Store](https://chromewebstore.google.com/detail/unslop-search/bgdinkhacfkgcohhollpbfheldfjlfef)**
+
+The extension automatically applies AI-disabling parameters when you search, and lets you quickly switch between search engines from the popup.
+
 ## Features
 
+- **Chrome extension** - Disable AI on search engines directly from your browser
 - **Multiple search engines** - Google, DuckDuckGo, Brave, Startpage, Qwant, Mojeek, Presearch
 - **AI disabled by default** - Each engine configured to skip AI summaries
 - **OpenSearch support** - Add as your browser's default search engine
@@ -77,7 +86,7 @@ The site will be available at `http://localhost:4321`
 │       ├── index.astro   # Homepage with search
 │       ├── search.astro  # Search redirect handler
 │       └── guides/       # SEO guide pages
-├── extension/            # Browser extension (WIP)
+├── extension/            # Chrome extension (published)
 └── package.json
 ```
 
